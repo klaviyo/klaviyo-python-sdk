@@ -82,7 +82,7 @@ class Client:
 
             headers = {
                 "Accept": "application/json",
-                "user-agent" : "klaviyo-python/1.0.0.20211126"
+                "user-agent" : "klaviyo-python/1.0.1.20211126"
                 }
 
             response = requests.request("PUT", url, headers=headers, params=querystring)
