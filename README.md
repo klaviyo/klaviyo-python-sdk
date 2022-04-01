@@ -1,6 +1,6 @@
 # Klaviyo Python SDK
 
-- SDK version: 1.0.2.20211126
+- SDK version: 1.0.2.20220329
 
 ## Helpful Resources
 

@@ -72,7 +72,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'klaviyo-python-sdk/1.0.2.20211126'
+        self.user_agent = 'klaviyo-python-sdk/1.0.2.20220329'
 
     def __del__(self):
         self.pool.close()
