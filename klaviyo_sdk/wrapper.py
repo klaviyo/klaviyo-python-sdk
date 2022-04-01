@@ -15,8 +15,6 @@ class Client:
 
     def __init__(self, api_key,test_host=None, max_delay=60, max_retries=3):
 
-        global configuration
-
         configuration = swagger_client.Configuration()
 
         self.api_key = api_key
@@ -82,7 +80,7 @@ class Client:
 
             headers = {
                 "Accept": "application/json",
-                "user-agent" : "klaviyo-python/1.0.1.20211126"
+                "user-agent" : "klaviyo-python-sdk/1.0.2.20211126"
                 }
 
             response = requests.request("PUT", url, headers=headers, params=querystring)
