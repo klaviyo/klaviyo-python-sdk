@@ -474,7 +474,7 @@ client.Templates.delete_template(template_id)
 #### [Get All Templates](https://developers.klaviyo.com/en/reference/get-templates)
 
 ```python
-client.Templates.get_templates()
+client.Templates.get_templates(page=page, count=count)
 ```
 
 
@@ -509,7 +509,7 @@ client.Templates.update_template(template_id, name=name, html=html)
 ## TrackIdentify
 
 
-#### [Identify Profile](https://developers.klaviyo.com/en/reference/identify-get)
+#### [Identify Profile (Legacy)](https://developers.klaviyo.com/en/reference/identify-get)
 
 ```python
 client.TrackIdentify.identify_get(data)
@@ -527,7 +527,7 @@ client.TrackIdentify.identify_post(data=data)
 
 
 
-#### [Track Profile Activity](https://developers.klaviyo.com/en/reference/track-get)
+#### [Track Profile Activity (Legacy)](https://developers.klaviyo.com/en/reference/track-get)
 
 ```python
 client.TrackIdentify.track_get(data)
