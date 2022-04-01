@@ -1,6 +1,6 @@
 # Klaviyo Python SDK
 
-- SDK version: 1.0.1.20211126
+- SDK version: 1.0.2.20211126
 
 ## Helpful Resources
 
@@ -474,7 +474,7 @@ client.Templates.delete_template(template_id)
 #### [Get All Templates](https://developers.klaviyo.com/en/reference/get-templates)
 
 ```python
-client.Templates.get_templates()
+client.Templates.get_templates(page=page, count=count)
 ```
 
 
