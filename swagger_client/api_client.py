@@ -65,19 +65,26 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
-        self.pool = ThreadPool()
+        self._pool = None  # Use the pool property to lazily initialize the ThreadPool.
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'klaviyo-python-sdk/1.0.2.20220329'
+        self.user_agent = 'klaviyo-python-sdk/1.0.3.20220329'
 
     def __del__(self):
-        self.pool.close()
-        self.pool.join()
+        if self._pool is not None:
+            self._pool.close()
+            self._pool.join()
 
+    @property
+    def pool(self):
+        if self._pool is None:
+            self._pool = ThreadPool()
+        return self._pool
+        
     @property
     def user_agent(self):
         """User agent for this API client"""
