@@ -39,8 +39,7 @@ class PeopleExchangeBody(object):
         """PeopleExchangeBody - a model defined in Swagger"""  # noqa: E501
         self._exchange_id = None
         self.discriminator = None
-        if exchange_id is not None:
-            self.exchange_id = exchange_id
+        self.exchange_id = exchange_id
 
     @property
     def exchange_id(self):
@@ -60,6 +59,8 @@ class PeopleExchangeBody(object):
         :param exchange_id: The exchange_id of this PeopleExchangeBody.  # noqa: E501
         :type: str
         """
+        if exchange_id is None:
+            raise ValueError("Invalid value for `exchange_id`, must not be `None`")  # noqa: E501
 
         self._exchange_id = exchange_id
 

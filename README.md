@@ -1,6 +1,6 @@
 # Klaviyo Python SDK
 
-- SDK version: 1.0.2.20220329
+- SDK version: 1.0.3.20220329
 
 ## Helpful Resources
 
@@ -30,7 +30,7 @@ This SDK is organized into the following resources:
 
 ## pip
 
-You can install this library using `pip`.
+You can install this library using [`pip`](https://pypi.org/project/klaviyo-sdk/).
 
 Depending on your system configuration, you will need to run *one* of the following shell commands:
 
@@ -553,12 +553,13 @@ client.TrackIdentify.track_post(data=data)
 ## Refresher on catching exceptions:
 
 ```python
-import klaviyo
-
 try:
     YOUR_CALL
-except klaviyo.ApiException as e:
-    print(e.status, e.reason, e.body, e.headers)
+except Exception as e:
+    print(e.status)
+    print(e.reason)
+    print(e.body)
+    print(e.headers)
 ```
 
 ## Namespace
