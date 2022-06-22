@@ -30,32 +30,37 @@ class InlineResponse2008Records(object):
     swagger_types = {
         'id': 'str',
         'email': 'str',
+        'reason': 'str',
         'phone_number': 'str',
-        'push_token': 'str'
+        'phone_reason': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'email': 'email',
+        'reason': 'reason',
         'phone_number': 'phone_number',
-        'push_token': 'push_token'
+        'phone_reason': 'phone_reason'
     }
 
-    def __init__(self, id=None, email=None, phone_number=None, push_token=None):  # noqa: E501
+    def __init__(self, id=None, email=None, reason=None, phone_number=None, phone_reason=None):  # noqa: E501
         """InlineResponse2008Records - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._email = None
+        self._reason = None
         self._phone_number = None
-        self._push_token = None
+        self._phone_reason = None
         self.discriminator = None
         if id is not None:
             self.id = id
         if email is not None:
             self.email = email
+        if reason is not None:
+            self.reason = reason
         if phone_number is not None:
             self.phone_number = phone_number
-        if push_token is not None:
-            self.push_token = push_token
+        if phone_reason is not None:
+            self.phone_reason = phone_reason
 
     @property
     def id(self):
@@ -100,6 +105,27 @@ class InlineResponse2008Records(object):
         self._email = email
 
     @property
+    def reason(self):
+        """Gets the reason of this InlineResponse2008Records.  # noqa: E501
+
+
+        :return: The reason of this InlineResponse2008Records.  # noqa: E501
+        :rtype: str
+        """
+        return self._reason
+
+    @reason.setter
+    def reason(self, reason):
+        """Sets the reason of this InlineResponse2008Records.
+
+
+        :param reason: The reason of this InlineResponse2008Records.  # noqa: E501
+        :type: str
+        """
+
+        self._reason = reason
+
+    @property
     def phone_number(self):
         """Gets the phone_number of this InlineResponse2008Records.  # noqa: E501
 
@@ -121,25 +147,25 @@ class InlineResponse2008Records(object):
         self._phone_number = phone_number
 
     @property
-    def push_token(self):
-        """Gets the push_token of this InlineResponse2008Records.  # noqa: E501
+    def phone_reason(self):
+        """Gets the phone_reason of this InlineResponse2008Records.  # noqa: E501
 
 
-        :return: The push_token of this InlineResponse2008Records.  # noqa: E501
+        :return: The phone_reason of this InlineResponse2008Records.  # noqa: E501
         :rtype: str
         """
-        return self._push_token
+        return self._phone_reason
 
-    @push_token.setter
-    def push_token(self, push_token):
-        """Sets the push_token of this InlineResponse2008Records.
+    @phone_reason.setter
+    def phone_reason(self, phone_reason):
+        """Sets the phone_reason of this InlineResponse2008Records.
 
 
-        :param push_token: The push_token of this InlineResponse2008Records.  # noqa: E501
+        :param phone_reason: The phone_reason of this InlineResponse2008Records.  # noqa: E501
         :type: str
         """
 
-        self._push_token = push_token
+        self._phone_reason = phone_reason
 
     def to_dict(self):
         """Returns the model properties as a dict"""

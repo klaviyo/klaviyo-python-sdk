@@ -45,7 +45,7 @@ class ListsSegmentsApi(object):
         :param async_req bool
         :param str list_id: (required)
         :param ListIdMembersBody body:
-        :return: list[InlineResponse2006]
+        :return: list[InlineResponse2007]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -68,7 +68,7 @@ class ListsSegmentsApi(object):
         :param async_req bool
         :param str list_id: (required)
         :param ListIdMembersBody body:
-        :return: list[InlineResponse2006]
+        :return: list[InlineResponse2007]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -130,7 +130,7 @@ class ListsSegmentsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[InlineResponse2006]',  # noqa: E501
+            response_type='list[InlineResponse2007]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -149,7 +149,7 @@ class ListsSegmentsApi(object):
 
         :param async_req bool
         :param str list_name:
-        :return: InlineResponse2004
+        :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -171,7 +171,7 @@ class ListsSegmentsApi(object):
 
         :param async_req bool
         :param str list_name:
-        :return: InlineResponse2004
+        :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -227,7 +227,7 @@ class ListsSegmentsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2004',  # noqa: E501
+            response_type='InlineResponse2005',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -339,7 +339,7 @@ class ListsSegmentsApi(object):
 
         :param async_req bool
         :param str email:
-        :return: InlineResponse2002
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -361,7 +361,7 @@ class ListsSegmentsApi(object):
 
         :param async_req bool
         :param str email:
-        :return: InlineResponse2002
+        :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -417,7 +417,7 @@ class ListsSegmentsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2002',  # noqa: E501
+            response_type='InlineResponse2003',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -542,7 +542,7 @@ class ListsSegmentsApi(object):
         :param async_req bool
         :param str list_id: (required)
         :param int marker: A marker value returned by a previous GET call. Use this to grab the next batch of records.
-        :return: InlineResponse2007
+        :return: InlineResponse2008
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -565,7 +565,7 @@ class ListsSegmentsApi(object):
         :param async_req bool
         :param str list_id: (required)
         :param int marker: A marker value returned by a previous GET call. Use this to grab the next batch of records.
-        :return: InlineResponse2007
+        :return: InlineResponse2008
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -623,7 +623,7 @@ class ListsSegmentsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2007',  # noqa: E501
+            response_type='InlineResponse2008',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -642,7 +642,7 @@ class ListsSegmentsApi(object):
 
         :param async_req bool
         :param str list_id: (required)
-        :return: InlineResponse2005
+        :return: InlineResponse2006
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -664,7 +664,7 @@ class ListsSegmentsApi(object):
 
         :param async_req bool
         :param str list_id: (required)
-        :return: InlineResponse2005
+        :return: InlineResponse2006
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -720,7 +720,7 @@ class ListsSegmentsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2005',  # noqa: E501
+            response_type='InlineResponse2006',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -948,7 +948,7 @@ class ListsSegmentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[InlineResponse2003]
+        :return: list[InlineResponse2004]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -969,7 +969,7 @@ class ListsSegmentsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[InlineResponse2003]
+        :return: list[InlineResponse2004]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1019,7 +1019,7 @@ class ListsSegmentsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[InlineResponse2003]',  # noqa: E501
+            response_type='list[InlineResponse2004]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1039,7 +1039,7 @@ class ListsSegmentsApi(object):
         :param async_req bool
         :param str list_or_segment_id: (required)
         :param int marker: A marker value returned by a previous GET call. Use this to grab the next batch of records.
-        :return: InlineResponse2008
+        :return: InlineResponse2009
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1062,7 +1062,7 @@ class ListsSegmentsApi(object):
         :param async_req bool
         :param str list_or_segment_id: (required)
         :param int marker: A marker value returned by a previous GET call. Use this to grab the next batch of records.
-        :return: InlineResponse2008
+        :return: InlineResponse2009
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1120,7 +1120,7 @@ class ListsSegmentsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2008',  # noqa: E501
+            response_type='InlineResponse2009',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

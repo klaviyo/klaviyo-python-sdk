@@ -1,6 +1,6 @@
 # Klaviyo Python SDK
 
-- SDK version: 1.0.3.20220329
+- SDK version: 1.0.4.20220329
 
 ## Helpful Resources
 
@@ -410,6 +410,15 @@ client.Profiles.exchange(body=body)
 
 ```python
 client.Profiles.get_profile(person_id)
+```
+
+
+
+
+#### [Get Profile ID](https://developers.klaviyo.com/en/reference/get-profile-id)
+
+```python
+client.Profiles.get_profile_id(email=email, phone_number=phone_number, external_id=external_id)
 ```
 
 

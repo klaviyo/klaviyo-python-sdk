@@ -19,7 +19,7 @@ class Client:
 
         self.api_key = api_key
 
-        self.retry_codes = [429,503,504]
+        self.retry_codes = [429,503,504,524]
 
         self.retry_logic = tenacity.retry(
             reraise=True,
@@ -80,7 +80,7 @@ class Client:
 
             headers = {
                 "Accept": "application/json",
-                "user-agent" : "klaviyo-python-sdk/1.0.3.20220329"
+                "user-agent" : "klaviyo-python-sdk/1.0.4.20220329"
                 }
 
             response = requests.request("PUT", url, headers=headers, params=querystring)
