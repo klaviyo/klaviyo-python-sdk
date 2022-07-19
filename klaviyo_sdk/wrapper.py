@@ -32,36 +32,95 @@ class Client:
         if test_host:
             configuration.host = test_host
 
-        subclient_names = [item_name for item_name in dir(swagger_client.api) if inspect.isclass(getattr(swagger_client.api,item_name)) and 'with_http_info' not in item_name]
+        ## Adding Campaigns to Client
+        self.Campaigns=swagger_client.CampaignsApi(swagger_client.ApiClient(configuration))
 
-        for subclient_name in subclient_names:
+        ## Applying tenacity retry decorator to each endpoint in Campaigns
+        self.Campaigns.cancel_campaign=self.retry_logic(self.Campaigns.cancel_campaign)
+        self.Campaigns.clone_campaign=self.retry_logic(self.Campaigns.clone_campaign)
+        self.Campaigns.create_campaign=self.retry_logic(self.Campaigns.create_campaign)
+        self.Campaigns.get_campaign_info=self.retry_logic(self.Campaigns.get_campaign_info)
+        self.Campaigns.get_campaign_recipients=self.retry_logic(self.Campaigns.get_campaign_recipients)
+        self.Campaigns.get_campaigns=self.retry_logic(self.Campaigns.get_campaigns)
+        self.Campaigns.schedule_campaign=self.retry_logic(self.Campaigns.schedule_campaign)
+        self.Campaigns.send_campaign=self.retry_logic(self.Campaigns.send_campaign)
+        self.Campaigns.update_campaign=self.retry_logic(self.Campaigns.update_campaign)
+        
+        ## Adding DataPrivacy to Client
+        self.DataPrivacy=swagger_client.DataPrivacyApi(swagger_client.ApiClient(configuration))
 
-            setattr(self,subclient_name,eval(f'swagger_client.{subclient_name}(swagger_client.ApiClient(configuration))'))
+        ## Applying tenacity retry decorator to each endpoint in DataPrivacy
+        self.DataPrivacy.request_deletion=self.retry_logic(self.DataPrivacy.request_deletion)
+        
+        ## Adding ListsSegments to Client
+        self.ListsSegments=swagger_client.ListsSegmentsApi(swagger_client.ApiClient(configuration))
 
-            subclient = eval(f'self.{subclient_name}')
+        ## Applying tenacity retry decorator to each endpoint in ListsSegments
+        self.ListsSegments.add_members=self.retry_logic(self.ListsSegments.add_members)
+        self.ListsSegments.create_list=self.retry_logic(self.ListsSegments.create_list)
+        self.ListsSegments.delete_list=self.retry_logic(self.ListsSegments.delete_list)
+        self.ListsSegments.exclude_globally=self.retry_logic(self.ListsSegments.exclude_globally)
+        self.ListsSegments.get_global_exclusions=self.retry_logic(self.ListsSegments.get_global_exclusions)
+        self.ListsSegments.get_list_exclusions=self.retry_logic(self.ListsSegments.get_list_exclusions)
+        self.ListsSegments.get_list_info=self.retry_logic(self.ListsSegments.get_list_info)
+        self.ListsSegments.get_list_members=self.retry_logic(self.ListsSegments.get_list_members)
+        self.ListsSegments.get_list_subscriptions=self.retry_logic(self.ListsSegments.get_list_subscriptions)
+        self.ListsSegments.get_lists=self.retry_logic(self.ListsSegments.get_lists)
+        self.ListsSegments.get_members=self.retry_logic(self.ListsSegments.get_members)
+        self.ListsSegments.get_segment_members=self.retry_logic(self.ListsSegments.get_segment_members)
+        self.ListsSegments.remove_members=self.retry_logic(self.ListsSegments.remove_members)
+        self.ListsSegments.subscribe=self.retry_logic(self.ListsSegments.subscribe)
+        self.ListsSegments.unsubscribe=self.retry_logic(self.ListsSegments.unsubscribe)
+        self.ListsSegments.update_list_name=self.retry_logic(self.ListsSegments.update_list_name)
+        
+        ## Adding Metrics to Client
+        self.Metrics=swagger_client.MetricsApi(swagger_client.ApiClient(configuration))
 
-            for attribute_name in dir(subclient):
+        ## Applying tenacity retry decorator to each endpoint in Metrics
+        self.Metrics.get_metrics=self.retry_logic(self.Metrics.get_metrics)
+        self.Metrics.metric_export=self.retry_logic(self.Metrics.metric_export)
+        self.Metrics.metric_timeline=self.retry_logic(self.Metrics.metric_timeline)
+        self.Metrics.metrics_timeline=self.retry_logic(self.Metrics.metrics_timeline)
+        
+        ## Adding Profiles to Client
+        self.Profiles=swagger_client.ProfilesApi(swagger_client.ApiClient(configuration))
 
-                if f'{attribute_name}_with_http_info' in dir(subclient):
+        ## Applying tenacity retry decorator to each endpoint in Profiles
+        self.Profiles.exchange=self.retry_logic(self.Profiles.exchange)
+        self.Profiles.get_profile=self.retry_logic(self.Profiles.get_profile)
+        self.Profiles.get_profile_id=self.retry_logic(self.Profiles.get_profile_id)
+        self.Profiles.profile_metric_timeline=self.retry_logic(self.Profiles.profile_metric_timeline)
+        self.Profiles.profile_metrics_timeline=self.retry_logic(self.Profiles.profile_metrics_timeline)
+        self.Profiles.update_profile=self.retry_logic(self.Profiles.update_profile)
+        
+        ## Adding Templates to Client
+        self.Templates=swagger_client.TemplatesApi(swagger_client.ApiClient(configuration))
 
-                    endpoint = eval(f'subclient.{attribute_name}')
+        ## Applying tenacity retry decorator to each endpoint in Templates
+        self.Templates.clone_template=self.retry_logic(self.Templates.clone_template)
+        self.Templates.create_template=self.retry_logic(self.Templates.create_template)
+        self.Templates.delete_template=self.retry_logic(self.Templates.delete_template)
+        self.Templates.get_templates=self.retry_logic(self.Templates.get_templates)
+        self.Templates.render_template=self.retry_logic(self.Templates.render_template)
+        self.Templates.send_template=self.retry_logic(self.Templates.send_template)
+        self.Templates.update_template=self.retry_logic(self.Templates.update_template)
+        
+        ## Adding TrackIdentify to Client
+        self.TrackIdentify=swagger_client.TrackIdentifyApi(swagger_client.ApiClient(configuration))
 
-                    endpoint = self.retry_logic(endpoint)
+        ## Applying tenacity retry decorator to each endpoint in TrackIdentify
+        self.TrackIdentify.identify_get=self.retry_logic(self.TrackIdentify.identify_get)
+        self.TrackIdentify.identify_post=self.retry_logic(self.TrackIdentify.identify_post)
+        self.TrackIdentify.track_get=self.retry_logic(self.TrackIdentify.track_get)
+        self.TrackIdentify.track_post=self.retry_logic(self.TrackIdentify.track_post)
+        
 
-                    setattr(subclient,attribute_name,endpoint)
+        self.TrackIdentify.track_post = self.post_update(self.TrackIdentify.track_post)
+        self.TrackIdentify.identify_post = self.post_update(self.TrackIdentify.identify_post)
+        self.TrackIdentify.track_get = self.get_update(self.TrackIdentify.track_get)
+        self.TrackIdentify.identify_get = self.get_update(self.TrackIdentify.identify_get)
 
-        self.TrackIdentifyApi.track_post = self.post_update(self.TrackIdentifyApi.track_post)
-        self.TrackIdentifyApi.identify_post = self.post_update(self.TrackIdentifyApi.identify_post)
-        self.TrackIdentifyApi.track_get = self.get_update(self.TrackIdentifyApi.track_get)
-        self.TrackIdentifyApi.identify_get = self.get_update(self.TrackIdentifyApi.identify_get)
-
-        self.ProfilesApi.update_profile = self.update_profile_fix(self.ProfilesApi.update_profile)
-
-        # last step: drop 'Api' suffix from sublient name
-        for subclient_name in subclient_names:
-
-            setattr(self,subclient_name[:-3],eval(f'self.{subclient_name}'))
-
+        self.Profiles.update_profile = self.update_profile_fix(self.Profiles.update_profile)
 
     def is_error(self, status):
 
@@ -80,7 +139,7 @@ class Client:
 
             headers = {
                 "Accept": "application/json",
-                "user-agent" : "klaviyo-python-sdk/1.0.4.20220329"
+                "user-agent" : "klaviyo-python-sdk/1.0.5.20220329"
                 }
 
             response = requests.request("PUT", url, headers=headers, params=querystring)

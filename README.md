@@ -1,6 +1,6 @@
 # Klaviyo Python SDK
 
-- SDK version: 1.0.4.20220329
+- SDK version: 1.0.5.20220329
 
 ## Helpful Resources
 
@@ -44,13 +44,11 @@ OR
 
 *Alternatively*, you can also run this using this repo as source code, by running *one* of the following shell commands within the cloned repo:
 
-`pip install -r requirements`
+`pip install -r requirements.txt`
 
 OR
 
-`pip3 install -r requirements`
-
-
+`pip3 install -r requirements.txt`
 
 
 and then running python from the cloned repo.
