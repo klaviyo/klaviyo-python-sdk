@@ -166,7 +166,7 @@ class Client:
 
             headers = {
                 "Accept": "application/json",
-                "user-agent" : "klaviyo-python-sdk/1.0.5.20220329"
+                "user-agent" : "klaviyo-python-sdk/1.0.6.20220329"
                 }
 
             response = requests.request("PUT", url, headers=headers, params=querystring, timeout=self.max_wait)
