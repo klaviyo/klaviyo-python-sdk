@@ -217,5 +217,3 @@ class Client:
                 raise TypeError("data must be a dict, str, or bytes")
 
         return _wrapped_func
-        
-        
