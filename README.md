@@ -1,6 +1,16 @@
+# NEW API + SDK
+
+NOTE: we have a python SDK to go along with our new API.
+
+We recommend migrating over to our [newest SDK](https://github.com/klaviyo/klaviyo-api-python).
+
+You can read more about our SDK release history and support [here](https://developers.klaviyo.com/en/docs/sdk_overview)
+
+For a comparison between our old and new APIs, check out [this guide](https://developers.klaviyo.com/en/docs/apis_comparison_chart).
+
 # Klaviyo Python SDK
 
-- SDK version: 1.0.6.20220329
+- SDK version: 1.0.7.20220329
 
 ## Helpful Resources
 
