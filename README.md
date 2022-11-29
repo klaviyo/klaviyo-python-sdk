@@ -1,6 +1,6 @@
 # NEW API + SDK
 
-NOTE: we have a NEW python SDK to go along with our new API.
+NOTE: we have a NEW python SDK to go along with our [new API](https://developers.klaviyo.com/en/reference/api_overview).
 
 We recommend migrating over to our [newest SDK](https://github.com/klaviyo/klaviyo-api-python).
 
